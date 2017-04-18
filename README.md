@@ -49,23 +49,23 @@ Programming guideline (considered for grading):
   complexity from growing. You can reduce your code size by using the
   this keyword in your event
   handlers.
-- [ ] Some global variables are allowed, but it is not appropriate to declare
+- [x] Some global variables are allowed, but it is not appropriate to declare
   too many; values should be local as much as possible. If a particular value
   is used frequently throughout your code, declare it as a global "constant"
   variable named IN_UPPER_CASE and use the constant throughout your code. Do
   not store DOM element objects, such as those returned by the $ or $$ or
   document.getElementById functions, as global variables.
-- [ ] Your JavaScript code should have adequate commenting. The top of your
+- [x] Your JavaScript code should have adequate commenting. The top of your
   file should have a descriptive comment header describing the assignment, and
   each function and complex section of code should be documented.
-- [ ] Format your code by properly using whitespace and indentation. Use good
+- [x] Format your code by properly using whitespace and indentation. Use good
   variable and method names. Avoid lines of code more than 100 characters wide.
-- [ ] Separate content (HTML), presentation (CSS), and behavior (JS). Your JS
+- [x] Separate content (HTML), presentation (CSS), and behavior (JS). Your JS
   code should use styles and classes from the CSS rather than manually setting
   each style property in the JS. For example, rather than setting the .style of
   a DOM object, instead, give it a className and put the styles for that class
   in your CSS file. Style properties related to x/y positions of tiles and
   their backgrounds are impractical to put in the CSS file, so those can be in
   your JS code.
-- [ ] Use unobtrusive JavaScript so that no JavaScript code, onclick handlers,
+- [x] Use unobtrusive JavaScript so that no JavaScript code, onclick handlers,
   etc. are embedded into the HTML code.
