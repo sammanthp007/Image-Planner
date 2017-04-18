@@ -1,9 +1,32 @@
 "use strict";
 
+var images_in_planning = [];
+
 window.onload = function() {
   $('add_btn').onclick = addImage;
   $('delete_btn').onclick = deleteImage;
   $('planning_div').onclick = showURL;
+}
+
+
+function addUrlToPlanningArea(url) {
+  images_in_planning.push(url);
+  displayPlanningArea();
+}
+
+
+function displayPlanningArea() {
+  removeAllChildrenFromPlanningArea();
+  for (var count = 0; count < images_in_planning.length; count++) {
+    addImageToPlanningArea(images_in_planning[count]);
+  }
+}
+
+
+function removeAllChildrenFromPlanningArea() {
+  while ($('planning_div').hasChildNodes()) {
+    $('planning_div').removeChild($('planning_div').lastChild);
+  }
 }
 
 function addImage() {
@@ -11,7 +34,8 @@ function addImage() {
   var inputurl = document.getElementById("input_url").value;
 
   if (isValidUrl(inputurl)) {
-    addImageToPlanningArea(inputurl);
+    addUrlToPlanningArea(inputurl);
+    // addImageToPlanningArea(inputurl);
   } else {
     displayError("URL cannot be empty and must be valid");
   }
@@ -34,6 +58,7 @@ function addImageToPlanningArea(url) {
 
   var natural_height = image.naturalHeight;
   var natural_width = image.naturalWidth;
+
 
   if (natural_height > 100 && natural_width > 100) {
     image.width = 100;
