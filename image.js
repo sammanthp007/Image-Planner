@@ -4,11 +4,9 @@ var images_in_planning = [];
 
 window.onload = function() {
   // add event handlers to buttons
-  $('add_btn').onclick = addImage;
-  $('delete_btn').onclick = deleteImage;
-}
-
-
+  $("add_btn").onclick = addImage;
+  $("delete_btn").onclick = deleteImage;
+};
 
 // on clicking the add button
 function addImage() {
@@ -26,7 +24,7 @@ function addImage() {
 
 // removes the error statement from the error div
 function removeError() {
-  $("error_statement").innerHTML = ""
+  $("error_statement").innerHTML = "";
 }
 
 
@@ -34,7 +32,7 @@ function removeError() {
 function isValidUrl(url) {
   // got help from
   // stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url
-  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+  var expression = /[a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
 
   var regex = new RegExp(expression);
   return url.match(regex);
@@ -48,20 +46,22 @@ function addUrlToPlanningArea(url) {
 }
 
 
-// iterates through the images url and diplays images in planning area
-function displayPlanningArea() {
-  // remove all from the planning Area
-  removeAllChildrenFromPlanningArea();
-  for (var count = 0; count < images_in_planning.length; count++) {
-    addImageToPlanningArea(images_in_planning[count]);
+// function that removes all children from planning div
+function removeAllChildrenFromPlanningArea() {
+  while ($("planning_div").hasChildNodes()) {
+    $("planning_div").removeChild($("planning_div").lastChild);
   }
 }
 
 
-// function that removes all children from planning div
-function removeAllChildrenFromPlanningArea() {
-  while ($('planning_div').hasChildNodes()) {
-    $('planning_div').removeChild($('planning_div').lastChild);
+// iterates through the images url and diplays images in planning area
+function displayPlanningArea() {
+
+  // remove all from the planning Area
+  removeAllChildrenFromPlanningArea();
+  var count;
+  for (count = 0; count < images_in_planning.length; count += 1) {
+    addImageToPlanningArea(images_in_planning[count]);
   }
 }
 
@@ -97,6 +97,7 @@ function addImageToPlanningArea(url) {
 function makeZoomed() {
   var hh = this.naturalHeight;
   var ww = this.naturalWidth;
+
   if (hh < 500 && ww < 500) {
     this.height = hh;
     this.width = ww;
@@ -111,6 +112,7 @@ function makeZoomed() {
 function makeOriginalSized() {
   var hh = this.naturalHeight;
   var ww = this.naturalWidth;
+
   if (hh < 100 && ww < 100) {
     this.height = hh;
     this.width = ww;
@@ -126,7 +128,7 @@ function showUrl() {
   removeError();
 
   // display the url in the input box
-  $('input_url').value = this.src;
+  $("input_url").value = this.src;
 }
 
 
@@ -141,8 +143,10 @@ function deleteImage() {
   removeError();
   var inputurl = document.getElementById("input_url").value;
   if (isValidUrl(inputurl)) {
+
     // remove the image, only one
-    for (var index = 0; index < images_in_planning.length; index++) {
+    var index = 0;
+    for (index = 0; index < images_in_planning.length; index++) {
       if (images_in_planning[index] == inputurl) {
         images_in_planning.splice(index, 1);
         displayPlanningArea();

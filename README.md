@@ -12,7 +12,7 @@
       displayed under the controls.
 
 - When user enters a URL in the input box and clicks the 'delete' button,
-    - [ ] If the URL is valid in terms of format,
+    - [x] If the URL is valid in terms of format,
         - [x] If the image at the URL is in the blank area, remove it.
         - [x] Otherwise, show an error message under the controls.
     - [x]  If the URL has an invalid format, an error message should be
@@ -40,7 +40,7 @@ In total you will turn in the following files:
     - [ ] Any comment that can help the instructor to understand your project.
 
 Programming guideline (considered for grading):
-- [ ] Your CSS code must pass the W3C CSS validator. Your JavaScript code
+- [x] Your CSS code must pass the W3C CSS validator. Your JavaScript code
   should pass JSLint with no errors. Your .js file must run in JavaScript
   strict mode by putting "use strict"; at the top.
 - [x] Minimize global variables, avoid redundant code, and use parameters and
