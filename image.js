@@ -5,7 +5,32 @@ var images_in_planning = [];
 window.onload = function() {
   $('add_btn').onclick = addImage;
   $('delete_btn').onclick = deleteImage;
-  $('planning_div').onclick = showURL;
+}
+
+
+
+function addImage() {
+  removeError();
+  var inputurl = document.getElementById("input_url").value;
+
+  if (isValidUrl(inputurl)) {
+    addUrlToPlanningArea(inputurl);
+  } else {
+    displayError("URL cannot be empty and must be valid");
+  }
+}
+
+
+function removeError() {
+  $("error_statement").innerHTML = ""
+}
+
+
+function isValidUrl(url) {
+  // TODO: change this
+  var exp = "[A-Za-z]*.jpg";
+  var regex = new RegExp(exp);
+  return url.match(exp);
 }
 
 
@@ -16,6 +41,7 @@ function addUrlToPlanningArea(url) {
 
 
 function displayPlanningArea() {
+  // remove all from the planning Area
   removeAllChildrenFromPlanningArea();
   for (var count = 0; count < images_in_planning.length; count++) {
     addImageToPlanningArea(images_in_planning[count]);
@@ -27,26 +53,6 @@ function removeAllChildrenFromPlanningArea() {
   while ($('planning_div').hasChildNodes()) {
     $('planning_div').removeChild($('planning_div').lastChild);
   }
-}
-
-function addImage() {
-  removeError();
-  var inputurl = document.getElementById("input_url").value;
-
-  if (isValidUrl(inputurl)) {
-    addUrlToPlanningArea(inputurl);
-    // addImageToPlanningArea(inputurl);
-  } else {
-    displayError("URL cannot be empty and must be valid");
-  }
-}
-
-
-function isValidUrl(url) {
-  // TODO: change this
-  var exp = "[A-Za-z]*.jpg";
-  var regex = new RegExp(exp);
-  return url.match(exp);
 }
 
 
@@ -65,6 +71,8 @@ function addImageToPlanningArea(url) {
     image.height = 100;
   }
 
+  image.observe("click", showUrl);
+
   $("planning_div").appendChild(image);
 }
 
@@ -74,16 +82,16 @@ function displayError(err) {
 }
 
 
+
 function deleteImage() {
   removeError();
   console.log("Clicked delete image");
 }
 
-function showURL() {
+function showUrl() {
   removeError();
-  console.log("Show usl clicked");
+  
+  // display the url in the input box
+  $('input_url').value = this.src;
 }
 
-function removeError() {
-  $("error_statement").innerHTML = ""
-}

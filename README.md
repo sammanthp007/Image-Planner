@@ -18,7 +18,7 @@
     - [ ]  If the URL has an invalid format, an error message should be
       displayed under the controls.
 
-- [ ] When user clicks an image in the planning area, its URL should show up in
+- [x] When user clicks an image in the planning area, its URL should show up in
   the input box.
 - [ ] When user hovers the mouse on an image, the image should be zoomed in to
   be the lesser of 500x500 and original size. 
