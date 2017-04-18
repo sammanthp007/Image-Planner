@@ -17,15 +17,15 @@ function addImage() {
 }
 
 function isValidUrl(url) {
-  var exp = "[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)";
+  // TODO: change this
+  var exp = "[A-Za-z]*.jpg";
   var regex = new RegExp(exp);
   return url.match(exp);
 }
 
 function addImageToPlanningArea(url) {
-  // create elemet to place the image
+  // create element to place the image
   var image = document.createElement("img");
-  
   image.className = "thumbnail_image";
 
   // add zooming capability
@@ -40,6 +40,7 @@ function addImageToPlanningArea(url) {
 
 function displayError(err) {
   console.log(err);
+  document.getElementById("error_statement").innerHTML = err;
 }
 
 
