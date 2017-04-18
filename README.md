@@ -13,9 +13,9 @@
 
 - When user enters a URL in the input box and clicks the 'delete' button,
     - [ ] If the URL is valid in terms of format,
-        - [ ] If the image at the URL is in the blank area, remove it.
-        - [ ] Otherwise, show an error message under the controls.
-    - [ ]  If the URL has an invalid format, an error message should be
+        - [x] If the image at the URL is in the blank area, remove it.
+        - [x] Otherwise, show an error message under the controls.
+    - [x]  If the URL has an invalid format, an error message should be
       displayed under the controls.
 
 - [x] When user clicks an image in the planning area, its URL should show up in
@@ -43,10 +43,11 @@ Programming guideline (considered for grading):
 - [ ] Your CSS code must pass the W3C CSS validator. Your JavaScript code
   should pass JSLint with no errors. Your .js file must run in JavaScript
   strict mode by putting "use strict"; at the top.
-- [ ] Minimize global variables, avoid redundant code, and use parameters and
-  return values properly. Make extra effort to minimize redundant code. Capture
-  common operations as functions to keep code size and complexity from growing.
-  You can reduce your code size by using the this keyword in your event
+- [x] Minimize global variables, avoid redundant code, and use parameters and
+  return values properly. Make extra effort to minimize redundant code. 
+- [x] Capture common operations as functions to keep code size and
+  complexity from growing. You can reduce your code size by using the
+  this keyword in your event
   handlers.
 - [ ] Some global variables are allowed, but it is not appropriate to declare
   too many; values should be local as much as possible. If a particular value
