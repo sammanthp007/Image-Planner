@@ -72,8 +72,36 @@ function addImageToPlanningArea(url) {
   }
 
   image.observe("click", showUrl);
+  image.observe("mouseover", makeZoomed);
+  image.observe("mouseout", makeOriginalSized);
 
   $("planning_div").appendChild(image);
+}
+
+
+function makeZoomed() {
+  var hh = this.naturalHeight;
+  var ww = this.naturalWidth;
+  if (hh < 500 && ww < 500) {
+    this.height = hh;
+    this.width = ww;
+  } else {
+    this.height = 500;
+    this.width = 500;
+  }
+}
+
+
+function makeOriginalSized() {
+  var hh = this.naturalHeight;
+  var ww = this.naturalWidth;
+  if (hh < 100 && ww < 100) {
+    this.height = hh;
+    this.width = ww;
+  } else {
+    this.height = 100;
+    this.width = 100;
+  }
 }
 
 

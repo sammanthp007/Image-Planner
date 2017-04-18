@@ -20,9 +20,9 @@
 
 - [x] When user clicks an image in the planning area, its URL should show up in
   the input box.
-- [ ] When user hovers the mouse on an image, the image should be zoomed in to
+- [x] When user hovers the mouse on an image, the image should be zoomed in to
   be the lesser of 500x500 and original size. 
-- [ ] After the cursor moves away from the image, the zooming effect should
+- [x] After the cursor moves away from the image, the zooming effect should
   disappear.
 - [x] Any error message should disappear when user enters a new URL or click
   either button.
