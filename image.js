@@ -32,10 +32,12 @@ function removeError() {
 
 // checks if url is valid
 function isValidUrl(url) {
-  // TODO: change this
-  var exp = "[A-Za-z]*.jpg";
-  var regex = new RegExp(exp);
-  return url.match(exp);
+  // got help from
+  // stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url
+  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+
+  var regex = new RegExp(expression);
+  return url.match(regex);
 }
 
 
