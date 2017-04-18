@@ -4,11 +4,11 @@
 - [x] image.html has the blank area before the controls
 
 - When user enters a URL in the input box and clicks the 'add' button,
-    - [ ] If the URL is valid in terms of format, the image at the URL should
+    - [x] If the URL is valid in terms of format, the image at the URL should
       be added to the planning area. If the image size if larger than 100x100,
       display it as no larger than 100x100. Fill a row with images first before
       putting images in another row.
-    - [ ] If the URL has an invalid format, an error message should be
+    - [x] If the URL has an invalid format, an error message should be
       displayed under the controls.
 
 - When user enters a URL in the input box and clicks the 'delete' button,
@@ -24,7 +24,7 @@
   be the lesser of 500x500 and original size. 
 - [ ] After the cursor moves away from the image, the zooming effect should
   disappear.
-- [ ] Any error message should disappear when user enters a new URL or click
+- [x] Any error message should disappear when user enters a new URL or click
   either button.
 
 

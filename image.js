@@ -7,14 +7,16 @@ window.onload = function() {
 }
 
 function addImage() {
+  removeError();
   var inputurl = document.getElementById("input_url").value;
 
   if (isValidUrl(inputurl)) {
-    addImageToPlannigArea(inputurl);
+    addImageToPlanningArea(inputurl);
   } else {
     displayError("URL cannot be empty and must be valid");
   }
 }
+
 
 function isValidUrl(url) {
   // TODO: change this
@@ -23,31 +25,40 @@ function isValidUrl(url) {
   return url.match(exp);
 }
 
+
 function addImageToPlanningArea(url) {
   // create element to place the image
   var image = document.createElement("img");
+  image.src = url;
   image.className = "thumbnail_image";
 
-  // add zooming capability
-  image.observe("mouseover", zoomIn);
-  image.observe("mouseout", zoomOut)
+  var natural_height = image.naturalHeight;
+  var natural_width = image.naturalWidth;
 
-  // Image tag is created, then added inside blank area.
-  // the tag is removed when the image fails to load.
-  // Causes an undesired effect on the tag.
+  if (natural_height > 100 && natural_width > 100) {
+    image.width = 100;
+    image.height = 100;
+  }
+
   $("planning_div").appendChild(image);
 }
 
+
 function displayError(err) {
-  console.log(err);
   document.getElementById("error_statement").innerHTML = err;
 }
 
 
 function deleteImage() {
+  removeError();
   console.log("Clicked delete image");
 }
 
 function showURL() {
+  removeError();
   console.log("Show usl clicked");
+}
+
+function removeError() {
+  $("error_statement").innerHTML = ""
 }

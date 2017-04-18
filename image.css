@@ -1,3 +1,7 @@
 #error_statement {
     color: red;
 }
+
+.thumbnail_image {
+    float: left;
+}
