@@ -1,7 +1,7 @@
 ## Image Planner
 
-- [ ] Create an index.html with the given controls
-- [ ] index.html has the blank area before the controls
+- [x] Create an index.html with the given controls
+- [x] image.html has the blank area before the controls
 
 - When user enters a URL in the input box and clicks the 'add' button,
     - [ ] If the URL is valid in terms of format, the image at the URL should
@@ -29,9 +29,9 @@
 
 
 In total you will turn in the following files:
-- [ ] image.html, your web page
-- [ ] image.css, the style sheet for your web page
-- [ ] image.js, the JavaScript code for your web page
+- [x] image.html, your web page
+- [x] image.css, the style sheet for your web page
+- [x] image.js, the JavaScript code for your web page
 - [ ] A plain text file named readme.txt that contains the following items:
     - [ ] The URL of your project on a hosting service.
     - [ ] The URL of your project on Github.
